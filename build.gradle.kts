@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.6.0"
+    kotlin("jvm") version "1.5.10"
 }
 
 repositories {
@@ -16,4 +16,7 @@ tasks {
     wrapper {
         gradleVersion = "7.3"
     }
+}
+dependencies {
+    implementation(kotlin("reflect"))
 }
