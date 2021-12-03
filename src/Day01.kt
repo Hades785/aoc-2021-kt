@@ -1,17 +1,24 @@
+class Day01Solver: TaskSolver {
+    override fun solvePart1(input: List<String>): String {
+        var lastValue = Int.MAX_VALUE
+        var counter = 0
+        for (value in input.map(String::toInt)) {
+            if (value > lastValue) counter += 1
+            lastValue = value
+        }
+        return counter.toString()
+    }
+
+    override fun solvePart2(input: List<String>): String =
+        solvePart1(input.map(String::toInt).windowed(3).map(List<Int>::sum).map(Int::toString))
+}
+
 fun main() {
-    fun part1(input: List<String>): Int {
-        return input.size
-    }
+    println("Day 01")
 
-    fun part2(input: List<String>): Int {
-        return input.size
-    }
+    check(runPart1<Day01Solver>("day01-test").toInt() == 7)
+    println("Part 1: ${runPart1<Day01Solver>("day01-input").toInt()}")
 
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 1)
-
-    val input = readInput("Day01")
-    println(part1(input))
-    println(part2(input))
+    check(runPart2<Day01Solver>("day01-test").toInt() == 5)
+    println("Part 2: ${runPart2<Day01Solver>("day01-input").toInt()}")
 }
