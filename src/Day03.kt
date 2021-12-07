@@ -26,15 +26,15 @@ class Day03Solver : TaskSolver {
     }
 }
 
-private fun <T> List<List<T>>.transpose(): List<List<T>> {
-    val list = MutableList<MutableList<T>>(get(0).size) { mutableListOf() }
-
-    forEach {
-        it.forEachIndexed { idx, t -> list[idx].add(t) }
-    }
-
-    return list
-}
+//private fun <T> List<List<T>>.transpose(): List<List<T>> {
+//    val list = MutableList<MutableList<T>>(get(0).size) { mutableListOf() }
+//
+//    forEach {
+//        it.forEachIndexed { idx, t -> list[idx].add(t) }
+//    }
+//
+//    return list
+//}
 
 fun main() {
     println("Day 03")
